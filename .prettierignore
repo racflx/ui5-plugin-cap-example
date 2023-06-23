@@ -1,0 +1,9 @@
+**/node_modules/
+**/gen/
+**/generated/
+**/dist/
+**/.git
+# dafür nutzen wir andere extensions
+*.xml
+*.html
+*.cds

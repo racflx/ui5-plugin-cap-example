@@ -1,0 +1,67 @@
+{
+  "name": "example.backend",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "engines": {
+    "node": "^18"
+  },
+  "dependencies": {
+    "@sap/cds": "~6.3",
+    "@sap/hana-client": "~2.14.24",
+    "@sap/hdbext": "^7.7.1",
+    "@sap/xssec": "~3.2.14",
+    "express": "~4",
+    "passport": "~0.6.0"
+  },
+  "devDependencies": {
+    "cpy-cli": "~4.2.0",
+    "npm-run-all": "~4.1.5",
+    "sqlite3": "~5.1.4",
+    "ts-node": "~10.9.1",
+    "typescript": "~4.8.4"
+  },
+  "scripts": {
+    "start": "cds run --profile production",
+    "dev": "cds-ts run --profile development",
+    "dev-watch": "tsc --watch --noEmit"
+  },
+  "cds": {
+    "requires": {
+      "[production]": {
+        "db": {
+          "kind": "hana",
+          "pool": {
+            "acquireTimeoutMillis": 5000,
+            "max": 1000
+          }
+        },
+        "auth-server": {
+          "kind:": "xsuaa"
+        },
+        "auth": {
+          "kind": "xsuaa"
+        }
+      },
+      "[development]": {
+        "db": {
+          "kind": "sql"
+        },
+        "auth": {
+          "kind": "basic-auth",
+          "users": {
+            "test": {
+              "password": "test",
+              "roles": [
+                "Admin"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
+    }
+  }
+}

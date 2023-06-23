@@ -1,0 +1,30 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "@sap/eslint-plugin-cds": "^2.6.3",
+    "@typescript-eslint/eslint-plugin": "~5.46.1",
+    "@typescript-eslint/parser": "~5.46.1",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "~8.5.0",
+    "eslint-plugin-prettier": "~4.2.1",
+    "prettier": "~2.8.1"
+  },
+  "scripts": {
+    "lint": "eslint packages/frontend packages/backend --fix",
+    "lint:cds": "eslint -c .eslintrc.cds.json packages/backend --no-eslintrc"
+  },
+  "engines": {
+    "node": "^18",
+    "vscode": "^1.22.0"
+  },
+  "ui5": {
+    "ui5parser": {
+      "ui5version": "1.108.0",
+      "proxyWorkspaces": [
+        "./packages/frontend"
+      ]
+    }
+  }
+}

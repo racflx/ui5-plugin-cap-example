@@ -1,0 +1,31 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier"
+  ],
+  "plugins": ["@typescript-eslint", "prettier"],
+  "parserOptions": {
+    "project": [
+      "./packages/frontend/tsconfig.eslint.json",
+      "./packages/backend/tsconfig.eslint.json"
+    ]
+  },
+  "rules": {
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "@typescript-eslint/restrict-template-expressions": 0,
+    "@typescript-eslint/no-namespace": 0,
+    "@typescript-eslint/no-unused-vars": [
+      "warn", // or "error"
+      {
+        "argsIgnorePattern": "^__",
+        "varsIgnorePattern": "^__",
+        "caughtErrorsIgnorePattern": "^__",
+        "args": "none"
+      }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "ui5.plugin.addInheritedPropertiesAndAggregations": true,
+  "ui5.plugin.jsCodeLens": true,
+  "ui5.plugin.moveDefineToFunctionParametersOnAutocomplete": false
+}

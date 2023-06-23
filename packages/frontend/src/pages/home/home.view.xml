@@ -1,0 +1,16 @@
+<mvc:View
+	controllerName="example.frontend.pages.home.home"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+>
+	<Page
+		id="homeView"
+		title="{i18n>appTitle}"
+	>
+		<content>
+			<Button press="onClick" text="Click me"></Button>
+		</content>
+	</Page>
+</mvc:View>
