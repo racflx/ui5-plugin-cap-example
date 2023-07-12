@@ -4,13 +4,18 @@
 	xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form"
 	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:md="cc.md"
 >
 	<Page
 		id="homeView"
 		title="{i18n>appTitle}"
 	>
 		<content>
-			<Button press="onClick" text="Click me"></Button>
+			<Button
+				press="onClick"
+				text="Click me"
+			/>
+			<md:Markdown fromFile="../../resources/test.md"/>
 		</content>
 	</Page>
 </mvc:View>
